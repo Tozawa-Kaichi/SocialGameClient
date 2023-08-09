@@ -52,7 +52,11 @@ namespace Outgame
             UIManager.StackView(ViewID.Information);
         }
 
-
+        public void GoSummerEventTittle()
+        {
+            //UIManager.StackView(ViewID.SummerEventTittle);
+            UIManager.NextView(ViewID.SummerEventTittle);
+        }
 
         public void DialogTest()
         {

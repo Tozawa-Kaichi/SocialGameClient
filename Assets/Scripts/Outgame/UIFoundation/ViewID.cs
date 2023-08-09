@@ -10,7 +10,7 @@ namespace Outgame
     {
         Title = 10,
         NewUser,
-
+        SummerEventTittle,
         Home = 100,
         Quest,
         QuestResult,

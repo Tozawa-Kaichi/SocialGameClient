@@ -14,14 +14,18 @@ public class UIManager
     //public static UIManager Instance => _instance;
     private UIManager() { }
 
-    RectTransform _root;
-    UIStackableView _current = null;
-    Stack<UIInformationBase> _uiSceneHistory = new Stack<UIInformationBase>();
-    Stack<UIStackableView> _uiStack = new Stack<UIStackableView>();
+    RectTransform _root;//UIのルート要素であるCanvasのRectTransformを保持します。
+    UIStackableView _current = null;// 現在表示されているUIを保持
+    Stack<UIInformationBase> _uiSceneHistory = new Stack<UIInformationBase>();// UIの遷移履歴を保持
+    Stack<UIStackableView> _uiStack = new Stack<UIStackableView>();//UIのスタックを管理するスタック
 
-    Dictionary<ViewID, GameObject> _sceneCache = new Dictionary<ViewID, GameObject>(); 
+    //読み込んだUIシーンのキャッシュを保持
+    Dictionary<ViewID, GameObject> _sceneCache = new Dictionary<ViewID, GameObject>();
 
-
+    /// <summary>
+    /// 初期設定を行うメソッドです。指定されたViewIDを元にシーンを読み込んで表示
+    /// </summary>
+    /// <param name="entry"></param>
     public static void Setup(ViewID entry)
     {
         _instance._uiStack.Clear();
